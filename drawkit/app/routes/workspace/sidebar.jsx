@@ -3,13 +3,19 @@
 'use client';
 
 export default function Sidebar({ onToolSelect, setImageFile }) {
-  const handleImageUpload = (e) => {
-    if (e.target.files[0]) setImageFile(e.target.files[0]);
+
+    const handleImageUpload = (e) => {
+    if (e.target.files[0]) {
+      setImageFile(e.target.files[0]);
+    }
   };
 
+
+
   return (
-    <div className="w-60 bg-gray-100 h-full shadow-md p-5 flex flex-col justify-center space-y-4">
-      <h2 className="text-xl text-center font-semibold mb-4">Tools</h2>
+    <div className="w-70 h-screen bg-gray-100 shadow-md flex flex-col">
+      <div className="my-auto p-7 flex flex-col items-center space-y-6">
+        <h2 className="text-2xl text-center font-semibold mb-2">Tools</h2>
 
       {[
         { label: ' Pen', value: 'pen' },
@@ -42,6 +48,6 @@ export default function Sidebar({ onToolSelect, setImageFile }) {
         />
       </label>
     </div>
+  </div>
   );
 }
- 
